@@ -85,7 +85,7 @@ LIMIT 5;
 SELECT title, publication_year FROM books WHERE publication_year = '2020' ORDER BY title ASC;
 
 #9. Find all Science Fiction books under $20
-SELECT title, price FROM books WHERE price < 20 AND genre= 'Fiction';
+SELECT title, price FROM books WHERE price < 20 AND genre= 'Science Fiction';
 
 #10. List all unique genre in the library
 SELECT DISTINCT(genre) FROM books;
