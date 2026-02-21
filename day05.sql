@@ -182,7 +182,7 @@ FROM orders AS o JOIN order_items AS i ON o.order_id=i.order_id
 JOIN customers AS c ON c.customer_id=o.customer_id;
 
 #3. Find the total amount spent by each customer
-SELECT SUM(i.price) AS tot_price, c.customer_name
+SELECT SUM(i.quantity * i.price) AS tot_spent, c.customer_name
 FROM orders AS o JOIN customers AS c ON o.customer_id=c.customer_id
 JOIN order_items AS i ON o.order_id=i.order_id
 GROUP BY c.customer_name
