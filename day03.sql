@@ -146,7 +146,8 @@ GROUP BY month;
 #6. Find categories with total revenue greater than $1000
 SELECT p.category, SUM(s.quantity*p.price) AS total_revenue
 FROM products p LEFT JOIN sales s ON p.product_id=s.product_id
-GROUP BY p.category;
+GROUP BY p.category
+HAVING SUM(s.quantity*p.price) > 1000;
 
 #7. List regions that have made more than 10 sales
 SELECT region, COUNT(*) AS number_of_sales
